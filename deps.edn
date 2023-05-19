@@ -1,0 +1,15 @@
+{:paths ["src"] ; where your cljd files will live
+ :deps {tensegritics/clojuredart {:local/root "/home/jmonetta/other-sources/ClojureDart"}}
+
+ :aliases {:dev {:classpath-overrides {org.clojure/clojure nil}
+                 :extra-deps {com.github.jpmonettas/clojure {:mvn/version "1.11.1-3"}
+                              com.github.jpmonettas/flow-storm-dbg {:mvn/version "3.6.0"}}
+                 :jvm-opts ["-Dproject-name=ClojureDart"
+                            "-Dflowstorm.startRecording=false"
+                            "-Dflowstorm.theme=light"
+                            "-Dclojure.storm.instrumentEnable=true"
+                            "-Dclojure.storm.instrumentOnlyPrefixes=cljd."]}
+           :cljd {:main-opts ["-m" "cljd.build"]}}
+
+ :cljd/opts {:kind :flutter
+             :main acme.main}}
