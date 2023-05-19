@@ -7,10 +7,11 @@
 - Run `((requiring-resolve 'cljd.build/-main) "flutter" "-d" "linux")` (or whatever arguments you normally give to flutter)
 - Wait for the app window to show, so we know startup compilation finished
 - Proposed debugging workflow
-  - Start recording (hit the recording button at the top left bar)
   - LOOP
+     - Start recording (hit the recording button at the top left bar)
      - Clear debugger state (Ctrl-L) (so you don't get confused by previous recordings)
      - Modify your src/acme/main.cljd and save it (so we fire a recompilation and record everything)
+     - Stop recording
 	 - Open the main thread
      - Debug
 
@@ -42,4 +43,3 @@ Happy debugging!
 FlowStorm repo: https://github.com/jpmonettas/flow-storm-debugger 
 
 FlowStorm user guide: https://jpmonettas.github.io/flow-storm-debugger/user_guide.html
-
